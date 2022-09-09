@@ -1,0 +1,88 @@
+!/bin/env python3
+
+import sys
+
+"""
+This game is about choosing doors that opens different realms.
+"""
+
+
+def door_one():
+    print("As you open this door you see a phatom samurai.")
+    print("..........")
+    print("As it walks towards you raises it sword to attack.")
+    print("You have a choice of three weapons: a sword, a shuriken, or a staff. ")
+    print("________________")
+    weapon = input("choose your weapon: sword, shuriken, staff: ")
+    if weapon == "staff":
+       print("The staff won't work against the sword...Your dead now!")
+    elif weapon == "sword":
+       print("Now you can now block the sowrd and strike of your own!")
+    elif weapon == "shuriken":
+       print("You can throw the weapon but you might miss!")
+    elif weapon == "":
+       print("Choose a weapon!!!")
+       print("Samurai killed you!!!")
+       exit(0)
+
+
+def door_two():
+    print("You open the door and two angels are looking at you.")
+    print("Which angel do you talk to first? ")
+    angel_choice = input("The angel onthe left or the right: ")
+    if angel_choice == "left":
+       print("The angel shows you your death.")
+    if angel_choice == "right":
+       print("You are transported to the room of gold!")
+       room_of_gold()
+
+
+def door_three():
+    print("You entered the room with 3 ninjas.")
+    print("How do you defeat 3 ninjas.")
+    print("what weapon do you use to defeat a ninja?")
+    weapon_choice = input("Do you use a knife, a belt or a gun? ")
+    if weapon_choice == "belt":
+       print("You will die soon...a belt can't defeat a ninja.")
+       print("you are being sent to the third dimension.")
+       third_dimension()
+    elif weapon_choice == "knife":
+       print("At least you have a fighting chance...")
+       exit(0)
+    elif weapon_choice == "gun":
+       print("Always picking up a gun, huh?")
+       print("Oh well, the ninja is dead!!")
+       exit(0)
+    
+
+
+def third_dimension():
+    print("You are in the third dimension.")
+    print("There is no escape.")
+    exit(0)
+
+
+def room_of_gold():
+    print("You are in the room of gold and see bags of gold.")
+    bags_of_gold = int(input("How many bags of gold do you take? "))
+    if bags_of_gold > 5:
+       print("You can't lift all the bags, you are crushed under the weight!")
+       exit(0)
+    elif bags_of_gold < 5:
+       print("you be able to carry tht out of the room but where is the door?")
+       print("The door is under your feet!")
+       exit(0)
+    
+def start():
+    print("You approach 3 doors.")
+    door_choice = input("choose your path: Door 1, 2, or 3: ")
+    if door_choice == "1":
+       door_one()
+    if door_choice == "2":
+       door_two()
+    if door_choice == "3":
+       door_three()
+    elif door_choice == "":
+       print("Choose a door!!")
+
+start()
